@@ -1,0 +1,60 @@
+<div class="row m-0">
+    <div class="col-7 offset-1">
+        <div class="row mt-5">
+            <p class="text-center w-100">Time Left: <b>{{ this.timer }}</b> Seconds</p>
+        </div>
+       <div class="row mt-5">
+            <div class="col-md-6">
+                <h3 class="camel-capitalize text-center">{{ userInfo['name'] }}</h3>
+                <div class="progress height-2rem mt-3">
+                    <div class="progress-bar bg-success progress-bar-striped progress-bar-animated active" style="width:{{ this.playerHealth }}%" id="playerHealthProgressBar">
+                        {{ this.playerHealth }}%
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <h3 class="camel-capitalize text-center">Corona</h3>
+                <div class="progress height-2rem mt-3">
+                    <div class="progress-bar bg-success progress-bar-striped progress-bar-animated" style="width:{{ this.coronoHealth }}%">
+                        {{ this.coronoHealth }}%
+                    </div>
+                </div>
+            </div>
+       </div>
+       <div class="row mt-5 mb-5">
+            <div class="col-3">
+                <button type="button" (click)="callAttack()" class="btn btn-primary w-75">ATTACK</button>
+            </div>
+            <div class="col-3">
+                <button type="button" (click)="callBlast()" class="btn btn-primary w-75">BLAST</button>
+            </div>
+            <div class="col-3">
+                <button type="button" (click)="callHeal()" class="btn btn-primary w-75">HEAL</button>
+            </div>
+            <div class="col-3">
+                <button type="button" (click)="callGiveUp()" class="btn btn-primary w-75">GIVE UP</button>
+            </div>
+        </div>
+    </div>
+    <div class="col-4 cmntry-text">
+        <div class="bg-dark running-commentry-box mt-3 mb-3">
+            <h4 class="text-center p-3">Commentry Box</h4>
+            <ul id="runningCommentry"></ul>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="resultModal">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-body">
+                {{ result['description'] }}
+            </div>
+            
+            <div class="modal-footer">
+                <a  href="javascript:;" (click)="newGame()" class="btn btn-primary">Yes</a>
+                <a href="javascript:;" (click)="dashboardRedirect()" class="btn btn-secondary">No</a>
+            </div>
+        </div>
+    </div>
+</div> 

@@ -1,1 +1,39 @@
 /* You can add global styles to this file, and also import other style files */
+html, body{ height:100%; margin:0; }
+header{ height:50px; }
+
+body { 
+    flex-direction: column; 
+    height: 80vh;
+    overflow: auto;
+} 
+
+.camel-capitalize {
+    text-transform: capitalize;
+}
+
+.height-2rem {
+    height: 2rem;
+}
+
+.hide-it {
+    display: none;
+}
+
+.progress-bar-animated {
+    animation: progress-bar-stripes 1s linear infinite !important;
+}
+
+.progress-bar {
+    -webkit-transition: width 30.0s ease !important;
+    -moz-transition: width 30.0s ease !important;
+    -o-transition: width 30.0s ease !important;
+    transition: width 0.5s ease !important;
+}
+
+.running-commentry-box {
+    min-height: 322px;
+    max-height: 322px;
+    color:white;
+    overflow-y: auto;
+}

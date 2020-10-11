@@ -1,0 +1,31 @@
+import { Component, OnInit } from '@angular/core';
+
+import { Router } from '@angular/router';
+import { CommonService } from '../common.service';
+
+@Component({
+  selector: 'app-header',
+  templateUrl: './header.component.html',
+  styleUrls: ['./header.component.scss']
+})
+export class HeaderComponent implements OnInit {
+  userInfo;
+  defaultUserAvatar = "data:image/png;base64,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";
+  constructor(
+    private router: Router,
+    private service:CommonService
+  ) { }
+
+  ngOnInit(): void {
+    this.userInfo = this.service.retrieveUser();
+  }
+
+  logOut() {
+    sessionStorage.clear();
+    this.service.sharingAlert = {
+      type: "success",
+      message: "User logged out successfully!!"
+    };
+    this.router.navigate(['/login']);
+  }
+}

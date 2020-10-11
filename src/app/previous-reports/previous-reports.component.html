@@ -1,0 +1,20 @@
+<div class="row m-0">
+    <div class="offset-2 col-8 mt-5 mb-5">
+        <table class="row-border hover" id="previousrecords">
+            <thead>
+                <tr>
+                    <th>Result</th>
+                    <th>Log Filename</th>
+                    <th>Played On</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let record of records">
+                    <td class="camel-capitalize" [ngClass]="{'text-success': record['result'] == 'win', 'text-danger': record['result'] == 'lose', 'text-warning': record['result'] == 'tie'}">{{ record['result'] }}</td>
+                    <td>{{ record['log_path'] ? record['log_path'] : 'No record found' }}</td>
+                    <td>{{ formatDate(record['created_at']) }}</td>
+                </tr>
+            </tbody>
+        </table> 
+    </div>
+</div> 
